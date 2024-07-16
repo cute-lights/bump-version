@@ -1,0 +1,25 @@
+name: "Bump Version"
+description: "Bumps the version in a file"
+inputs:
+    version-prefix: # id of input
+        description: "The version prefix"
+        default: "v"
+    push-to-branch:
+        description: "The branch to push to"
+        default: "main"
+    push-to-remote:
+        description: "The remote to push to"
+        default: "origin"
+    push-enabled:
+        description: "Whether to push the changes"
+        default: "true"
+    files:
+        description: "The files to include"
+        required: true
+outputs:
+    version: # id of output
+        description: "The new version"
+runs:
+    using: "node20"
+    main: "dist/index.js"
+    post: "dist/post.js"

@@ -1,0 +1,24 @@
+version = "0.1.0"
+[dependencies.cute_lights]
+version = "0.1.0"
+
+[package]
+name = "cute-light-clib"
+version = "1.5.4"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.86"
+cute_lights = { git = "https://github.com/cute-lights/rust-sdk", branch = "main" }
+tokio = { version = "1.38.0", features = ["full"] }
+
+[dependencies.cute_lights]
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+name = "cutelight"
+
+[build-dependencies]
+cbindgen = "0.26.0"
+csbindgen = "1.9.1"
