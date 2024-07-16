@@ -29234,7 +29234,7 @@ function updateFile(filePath, version) {
         pyProject(filePath, version);
     } else if (filePath.endsWith("meson.build")) {
         meson(filePath, version);
-    } else if (filePath.endsWith("csproj")) {
+    } else if (filePath.endsWith("csproj") || filePath.endsWith("csproj.xml")) {
         csproj(filePath, version);
     } else {
         throw new Error("Unsupported file type " + filePath);
@@ -31270,6 +31270,8 @@ var __webpack_exports__ = {};
 const { spawnSync } = __nccwpck_require__(2081);
 const core = __nccwpck_require__(2186);
 const { getVersion } = __nccwpck_require__(9297);
+
+
 
 
 if (core.getInput("push-enabled") === "true") {

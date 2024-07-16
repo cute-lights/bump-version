@@ -3,6 +3,8 @@ const core = require("@actions/core");
 const { getVersion } = require("./shared");
 
 
+
+
 if (core.getInput("push-enabled") === "true") {
     let newVersion = getVersion();
     spawnSync("git", ["config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"]);
